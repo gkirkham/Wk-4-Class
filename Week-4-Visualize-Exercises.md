@@ -69,8 +69,10 @@ Make a histogram of the `hwy` variable from `mpg`. Hint: do not supply a y varia
 
 ``` r
 ggplot(data = mpg) +
-  geom_histogram(mapping = aes(x = hwy), binwidth  = 2)
+  geom_histogram(mapping = aes(x = hwy))
 ```
+
+    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](Week-4-Visualize-Exercises_files/figure-markdown_github/unnamed-chunk-4-1.png)
 
@@ -79,6 +81,13 @@ Your Turn 4
 
 Use the help page for `geom_histogram` to make the bins 2 units wide.
 
+``` r
+ggplot(data = mpg) +
+  geom_histogram(mapping = aes(x = hwy), binwidth  = 2)
+```
+
+![](Week-4-Visualize-Exercises_files/figure-markdown_github/unnamed-chunk-5-1.png)
+
 Your Turn 5
 -----------
 
@@ -86,7 +95,7 @@ Add `color`, `size`, `alpha`, and `shape` aesthetics to your graph. Experiment.
 
 ``` r
 ggplot(data = mpg) +
-  geom_point(mapping = aes(x = displ, y = hwy))
+  geom_point(mapping = aes(x = displ, y = hwy, color = class, shape = fl))
 ```
 
 ![](Week-4-Visualize-Exercises_files/figure-markdown_github/unnamed-chunk-6-1.png)
@@ -127,6 +136,13 @@ Your Turn 6
 -----------
 
 Make a bar chart `class` colored by `class`. Use the help page for `geom_bar` to choose a "color" aesthetic for class.
+
+``` r
+ggplot(data =mpg) +
+  geom_bar(mapping = aes(x = class, color = class, fill = drv))
+```
+
+![](Week-4-Visualize-Exercises_files/figure-markdown_github/unnamed-chunk-8-1.png)
 
 Quiz
 ----
